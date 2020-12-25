@@ -70,7 +70,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(C. Walker, 20201212)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(C. Walker, 20201224)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -649,17 +649,17 @@
   #define DELTA_DIAGONAL_ROD 218.0        // (mm)
 
   // Distance between bed and nozzle Z home position
-  #define DELTA_HEIGHT 323.00             // (mm) Get this value from G33 auto calibrate
+  #define DELTA_HEIGHT 322.03             // (mm) Get this value from G33 auto calibrate
 
-  #define DELTA_ENDSTOP_ADJ { -0.57, -0.49, 0.0 } // Get these values from G33 auto calibrate
+  #define DELTA_ENDSTOP_ADJ { -1.60, -1.12, 0.00 } // Get these values from G33 auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
-  #define DELTA_RADIUS 96.22              // (mm) Get this value from G33 auto calibrate
+  #define DELTA_RADIUS 96.18              // (mm) Get this value from G33 auto calibrate
 
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
   // measured in degrees anticlockwise looking from above the printer
-  #define DELTA_TOWER_ANGLE_TRIM { -0.56, 0.18, 0.38 } // Get these values from G33 auto calibrate
+  #define DELTA_TOWER_ANGLE_TRIM { -0.60, 0.30, 0.30 } // Get these values from G33 auto calibrate
 
   // Delta radius and diagonal rod adjustments (mm)
   //#define DELTA_RADIUS_TRIM_TOWER { 0.0, 0.0, 0.0 }
@@ -794,7 +794,7 @@
  * total number of extruders, the last value applies to the rest.
  */
 //#define DISTINCT_E_FACTORS
-#define DEFAULT_E0_STEPS_PER_UNIT 98
+#define DEFAULT_E0_STEPS_PER_UNIT 571.40    //Mobius4 Extruder
 
 /**
  * Default Axis Steps Per Unit (steps/mm)
