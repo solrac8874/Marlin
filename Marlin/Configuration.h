@@ -70,7 +70,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(C. Walker, 20201224)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(C. Walker, 20210117)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -649,17 +649,17 @@
   #define DELTA_DIAGONAL_ROD 218.0        // (mm)
 
   // Distance between bed and nozzle Z home position
-  #define DELTA_HEIGHT 322.03             // (mm) Get this value from G33 auto calibrate
+  #define DELTA_HEIGHT 321.53             // (mm) Get this value from G33 auto calibrate
 
-  #define DELTA_ENDSTOP_ADJ { -1.60, -1.12, 0.00 } // Get these values from G33 auto calibrate
+  #define DELTA_ENDSTOP_ADJ { -1.42, -0.79, 0.00 } // Get these values from G33 auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
-  #define DELTA_RADIUS 96.18              // (mm) Get this value from G33 auto calibrate
+  #define DELTA_RADIUS 95.97              // (mm) Get this value from G33 auto calibrate
 
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
   // measured in degrees anticlockwise looking from above the printer
-  #define DELTA_TOWER_ANGLE_TRIM { -0.60, 0.30, 0.30 } // Get these values from G33 auto calibrate
+  #define DELTA_TOWER_ANGLE_TRIM { -0.62, 0.30, 0.31 } // Get these values from G33 auto calibrate
 
   // Delta radius and diagonal rod adjustments (mm)
   //#define DELTA_RADIUS_TRIM_TOWER { 0.0, 0.0, 0.0 }
@@ -970,6 +970,11 @@
 //#define BLTOUCH
 
 /**
+ * Pressure sensor with a BLTouch-like interface
+ */
+//#define CREALITY_TOUCH
+
+/**
  * Touch-MI Probe by hotends.fr
  *
  * This probe is deployed and activated by moving the X-axis to a magnet at the edge of the bed.
@@ -1196,8 +1201,8 @@
 // Require minimum nozzle and/or bed temperature for probing
 //#define PREHEAT_BEFORE_PROBING
 #if ENABLED(PREHEAT_BEFORE_PROBING)
-  #define PROBING_NOZZLE_TEMP 120   // (°C) Only applies to E0 at this time
-  #define PROBING_BED_TEMP     50
+  //#define PROBING_NOZZLE_TEMP 120   // (°C) Only applies to E0 at this time
+  #define PROBING_BED_TEMP     60
 #endif
 
 // For Inverting Stepper Enable Pins (Active Low) use 0, Non Inverting (Active High) use 1
@@ -1231,7 +1236,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -1573,25 +1578,6 @@
     #define LEVEL_CORNERS_VERIFY_RAISED   // After adjustment triggers the probe, re-probe to verify
     //#define LEVEL_CORNERS_AUDIO_FEEDBACK
   #endif
-
-  /**
-   * Corner Leveling Order
-   *
-   * Set 2 or 4 points. When 2 points are given, the 3rd is the center of the opposite edge.
-   *
-   *  LF  Left-Front    RF  Right-Front
-   *  LB  Left-Back     RB  Right-Back
-   *
-   * Examples:
-   *
-   *      Default        {LF,RB,LB,RF}         {LF,RF}           {LB,LF}
-   *  LB --------- RB   LB --------- RB    LB --------- RB   LB --------- RB
-   *  |  4       3  |   | 3         2 |    |     <3>     |   | 1           |
-   *  |             |   |             |    |             |   |          <3>|
-   *  |  1       2  |   | 1         4 |    | 1         2 |   | 2           |
-   *  LF --------- RF   LF --------- RF    LF --------- RF   LF --------- RF
-   */
-  #define LEVEL_CORNERS_LEVELING_ORDER { LF, RF, RB, LB }
 #endif
 
 /**
